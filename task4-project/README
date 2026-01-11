@@ -1,0 +1,95 @@
+## Task 4: Experiment Evaluation & Metrics
+
+Implemented execution time tracking and output evaluation to analyze experiment performance.
+
+Why this matters:
+
+Moves beyond “running code” to measuring outcomes
+
+Introduces basic performance metrics and scoring
+
+Reflects experimentation and monitoring mindset used in real systems
+
+Task 4: Experiment Evaluation & Metrics
+## Overview
+
+Task 4 focuses on evaluating experiment execution results by measuring performance metrics and output quality.
+This task demonstrates how experiment outcomes can be analyzed, scored, and reported in a structured way.
+
+## Tech Stack
+
+Python
+
+FastAPI
+
+REST APIs
+
+Swagger UI
+
+## Objective
+
+Measure execution time of an experiment
+
+Evaluate output quality
+
+Assign a score and status to the experiment
+
+Return structured evaluation results via API
+
+🚀 How to Run
+# Navigate to Task 4 project
+cd task4-project
+
+# Activate virtual environment
+venv\Scripts\activate   # Windows
+# source venv/bin/activate  # Mac/Linux
+
+# Start the server
+uvicorn main:app --reload
+
+
+Open Swagger UI:
+
+http://127.0.0.1:8000/docs
+
+🔗 API Implemented
+
+POST /run-task4 – Executes experiment logic, measures performance, and evaluates results
+
+🧪 Sample Request
+{
+  "input_text": "Task 4 execution and evaluation test"
+}
+
+📤 Sample Response
+{
+  "status": "completed",
+  "output": "TASK 4 EXECUTION AND EVALUATION TEST",
+  "execution_time_sec": 0.01,
+  "evaluation": {
+    "score": 8,
+    "quality": "Good"
+  }
+}
+
+## Evaluation Logic
+
+Execution Time: Calculated in seconds for each request
+
+Output Quality:
+
+No output → Failed (score: 0)
+
+Short output → Average (score: 4)
+
+Meaningful output → Good (score: 8)
+
+## Task 4 Outcome
+
+Execution time successfully measured
+
+Output evaluated using defined rules
+
+Score and quality assigned
+
+Structured API response returned

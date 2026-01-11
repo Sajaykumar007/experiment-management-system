@@ -1,0 +1,65 @@
+## Task 1: Backend Setup & Experiment APIs
+
+Implemented a FastAPI backend to manage experiments through REST APIs.
+This task establishes a clean backend foundation with proper request handling and API documentation.
+
+Key highlights:
+
+Clean API design
+
+Swagger-based testing
+
+Experiment lifecycle modeling
+
+## Overview
+
+Task 1 focuses on setting up the backend service using FastAPI and implementing REST APIs to manage experiments.
+This task establishes the base for all subsequent tasks.
+
+## Tech Stack
+
+Python
+
+FastAPI
+
+Uvicorn
+
+REST APIs
+
+Swagger UI
+
+How to Run
+# Clone the repository
+git clone <repository-url>
+cd task1-project
+
+# Create and activate virtual environment
+python -m venv venv
+venv\Scripts\activate   # Windows
+# source venv/bin/activate  # Mac/Linux
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Start the server
+uvicorn main:app --reload
+
+
+Open Swagger UI:
+
+http://127.0.0.1:8000/docs
+
+🔗 APIs Implemented
+
+POST /experiments – Create a new experiment
+
+GET /experiments – Retrieve all experiments
+
+GET /experiments/{id} – Retrieve experiment by ID
+
+🧪 Sample Request
+{
+  "name": "Sample Experiment",
+  "experiment_type": "llm",
+  "status": "created"
+}

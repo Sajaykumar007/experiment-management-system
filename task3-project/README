@@ -1,0 +1,98 @@
+## ask 3: Automation using n8n (Event-Driven Design)
+
+Built an automation workflow using n8n, triggered via webhooks when experiment status updates occur.
+
+Why this matters:
+
+Shows event-driven architecture
+
+Demonstrates automation beyond manual API calls
+
+Reflects real production workflows (notifications, logging, triggers)
+
+![alt text](<Screenshot (54).png>)
+
+![alt text](<Screenshot (55).png>)
+
+
+Task 3: Automation using n8n (Webhook-Based Workflow)
+## Overview
+
+Task 3 implements event-driven automation using n8n.
+An automation workflow is triggered via a Webhook whenever an experiment status update is received.
+
+## Tech Stack
+
+n8n (Workflow Automation)
+
+Webhooks
+
+REST APIs
+
+Postman (Testing)
+
+## How to Run
+1️⃣ Start n8n
+n8n start
+
+
+Open n8n Editor:
+
+http://localhost:5678
+
+2️⃣ Create Workflow
+
+Create a new workflow
+
+Add Webhook node
+
+Method: POST
+
+Path: experiment-status
+
+Add Respond to Webhook node
+
+Connect: Webhook → Respond to Webhook
+
+Set Webhook Respond option to
+“Using Respond to Webhook node”
+
+Save and Publish the workflow
+
+🔗 Webhook Endpoint
+http://localhost:5678/webhook/experiment-status
+
+🧪 Test using Postman
+
+Method: POST
+URL:
+
+http://localhost:5678/webhook/experiment-status
+
+
+Headers
+
+Content-Type: application/json
+
+
+Body (raw JSON) 
+
+{
+  "experiment_id": 1,
+  "status": "completed"
+}
+
+📤 Expected Response
+{
+  "message": "Experiment status received successfully"
+}
+
+# Task 3 Outcome
+
+Automation workflow created using n8n
+
+Webhook-based trigger implemented
+
+Event-driven design demonstrated
+
+Successfully tested using Postma
